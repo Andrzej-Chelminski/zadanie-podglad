@@ -1,0 +1,18 @@
+---
+---
+
+@import "./mixins.scss";
+@import "./variables";
+@import "./nav.scss";
+@import "./sections.scss";
+@import "./footer";
+@import "./nav-mobile";
+@import "./sections-mobile";
+@import "./footer-mobile";
+
+* {
+    margin: 0;
+    font-family: "Source Sans Pro";
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
