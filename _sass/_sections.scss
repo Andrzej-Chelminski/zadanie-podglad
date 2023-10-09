@@ -1,6 +1,37 @@
 @import "./variables";
 @import "./mixins.scss";
 
+.button-container {
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+    display: inline-flex;
+    gap: 15px;
+
+    .button-container--button {
+        @include typo($white, 900, 15px, normal, 0.3px, uppercase);
+        background-color: $primary-color-1;
+        border: none;
+        padding: 18px 40px;
+        cursor: pointer;
+        border-radius: 6px;
+        transition: 0.3s linear;
+    }
+}
+
+.button-container--arrow {
+    transition: 0.3s linear;
+}
+
+.button-container:hover .button-container--button {
+    transform: translateX(10px);
+}
+
+.button-container:hover .button-container--arrow {
+    opacity: 0;
+    transform: translateX(20px);
+}
+
 @media screen and (min-width: 1200px) {
     .header {
         @include typo($dark-color, 900, 48px, 67px, 0.04em, uppercase);
@@ -16,38 +47,6 @@
             @include typo($primary-color-1, 300, 30px, 36px, 0.04em, uppercase);
         }
     }
-
-    .button-container {
-        text-align: center;
-        justify-content: center;
-        margin: 0 auto;
-        display: inline-flex;
-        gap: 15px;
-
-        .button-container--button {
-            @include typo($white, 900, 15px, normal, 0.3px, uppercase);
-            background-color: $primary-color-1;
-            border: none;
-            padding: 18px 40px;
-            cursor: pointer;
-            border-radius: 6px;
-            transition: 0.3s linear;
-        }
-    }
-
-    .button-container--arrow {
-        transition: 0.3s linear;
-    }
-
-    .button-container:hover .button-container--button {
-        transform: translateX(10px);
-    }
-
-    .button-container:hover .button-container--arrow {
-        opacity: 0;
-        transform: translateX(20px);
-    }
-
 
     .section1 {
         padding-left: $margin-sides;
