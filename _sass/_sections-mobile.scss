@@ -1,6 +1,6 @@
-@import "./variables";
-@import "./mixins.scss";
-@import "./sections";
+@use "./variables" as *;
+@use "./mixins.scss" as *;
+@use "./sections" as *;
 
 .section1__mobile--image {
     display: none;
@@ -8,26 +8,18 @@
 
 @media screen and (max-width: 1199.98px) {
     .header {
-        @include typo($dark-color, 900, 28px, 30px, 1.12px, $dark-color uppercase);
+        @include typo($dark-color, 900, 28px, 30px, 1.12px, uppercase);
     }
 
     .sub-header {
-        padding: 0;
         .sub-header--element {
-            background: url(../assets/Rectangle3.svg) no-repeat left center;
-            padding-left: 20px;
-            list-style: none;
             @include typo($primary-color-1, 300, 15px, normal, 0.6px, uppercase);
-            background-size: 6px 6px;
+            background-size: 6px 6px 
         }
     }
 
     .section1 {
         @include center();
-        display: flex;
-        width: 100%;
-        transform: translateY(-60px);
-        background-color: $white;
         flex-direction: column;
         padding: 40px 15px;
         margin: 0 auto;
@@ -36,13 +28,15 @@
         .content {
             @include center();
             max-width: 360px;
-            padding-top: 80px;
         }
 
         .section1__image {
             flex: 100%;
             width: 100%;
             height: 200px;
+        }
+
+        .section1__image {
             border-left: none;
             max-width: 360px;
             .section1__mobile--image {
@@ -66,9 +60,6 @@
             }
     
             .content__list--element {
-                background: url(../assets/Rectangle7.svg) no-repeat left center;
-                padding-left: 20px;
-                list-style: none;
                 background-size: 7px 7px;
                 margin-bottom: 12px;
                 @include typo($dark-color, 400, 12px, normal, 0.48px);
@@ -99,18 +90,12 @@
     }
 
     .section2 {
-        background-color: $grey;
-        transform: translateY(-60px);
-
         .content {
             padding: 40px 0;
             max-width: 360px;
-            margin: 0 auto;
-            position: relative;
             @include center();
     
             .content__header-wrapper {
-                padding-left: 18px;
                 padding-bottom: 30px;
             }
 
@@ -119,89 +104,22 @@
                 flex-direction: column;
                 gap: 15px;
                 margin-bottom: 30px;
-                @include center();
 
                 .item__details {
                     padding: 15px;
                     background-color: $white;
-                    width: calc(100% + 1px);
-                    position: absolute;
-                    left: 50%;
                     transform: translate(-50%, -100%);
                     -ms-transform: translate(-50%, -100%);
                     @include typo($dark-color, 600, 14px, normal, 0.63px, uppercase);
                 }
-            }
-
-            .button-container {
-                position: relative;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            
-            .item {
-                position: relative;
-                border-radius: 3px;
-                flex: 0 0 calc(25% - 30px);
-                box-shadow: 6px 6px 25px 0px rgba(0, 0, 0, 0.10);
-            }
-
-            .item__image {
-                opacity: 1;
-                display: block;
-                width: 100%;
-                height: auto;
-                transition: 0.3s ease;
-                backface-visibility: hidden;
-            }
-
-            .item__middle {
-                transition: 0.3s ease;
-                opacity: 0;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -200%);
-                -ms-transform: translate(-50%, -200%);
-                text-align: center;
-                display: inline-flex;
-                gap: 15px;
-            }
-
-            .item__middle--paragraph {
-                color: $white;
-            }
-
-            .item__overlay {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                -ms-transform: translate(-50%, -50%);
-                width: 100%;
-                height: 100%;
-                opacity: 0;
-                transition: 0.3s ease;
-                background-color: rgba($color: #000000, $alpha: 0.4);
-            }
-
-            .item:hover .item__overlay {
-                opacity: 1;
-                
-            }
-
-            .item:hover .item__middle{
-                opacity: 1;
             }
         }
     }
 
     .section3 {
         transform: translateY(-60px);
-
         .section3__header-wrapper {
             padding-top: 26px;
-            padding-left: 15px;
             padding-bottom: 30px;
             max-width: 360px;
             position: relative;
@@ -209,32 +127,23 @@
         }
     
         .container {
-            background: url(../assets/warehouse.png);
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            width: 100%;
             padding-top: 20px;
             padding-bottom: 40px;
 
             .info {
                 max-width: 360px;
-                position: relative;
-                margin: 0 auto;
                 margin-bottom: 30px;
             }
         
             .info__stats {
                 display: flex;
                 flex-direction: column;
-                @include center();
             }
         
             .info__stat {
                 display: flex;
                 flex-direction: column;
                 padding: 15px 30px;
-                @include center();
         
                 .info__main {
                     @include typo($white, 900, 28px, 30px, 1.12px, uppercase);
@@ -246,26 +155,15 @@
             }
 
             .cards {
-                position: relative;
-                margin: 0 auto;
                 display: flex;
                 flex-direction: column;
                 max-width: 360px;
                 gap: 15px;
                 padding: 0 15px;
-                @include center();
             }
         
             .cards__card {
                 padding: 20px;
-                flex: 0 0 calc((100% / 3) - 30px);
-                display: flex;
-                flex-direction: column;
-                background-color: $grey;
-                border-radius: 2px;
-                border: 1px solid $secondary-grey;
-                justify-content: space-between;
-                height: 210px;
         
                 .cards__main {
                     @include typo($dark-color, 600, 14px, normal, 0.63px, uppercase);
