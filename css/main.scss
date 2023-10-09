@@ -1,6 +1,7 @@
 ---
 ---
 
+{
 @import "./mixins";
 @import "./variables";
 @import "./nav-mobile";
@@ -8,6 +9,7 @@
 @import "./nav";
 @import "./footer";
 @import "./sections";
+}
 
 * {
     margin: 0;
