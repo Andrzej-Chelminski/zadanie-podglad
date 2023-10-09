@@ -14,7 +14,7 @@
     .sub-header {
         .sub-header--element {
             @include typo($primary-color-1, 300, 15px, normal, 0.6px, uppercase);
-            background-size: 6px 6px 
+            background-size: 6px 6px;
         }
     }
 

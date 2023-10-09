@@ -8,7 +8,7 @@
 }
 
 .header {
-    @include typo($dark-color, 900, 48px, 67px, 0.04em, uppercase)
+    @include typo($dark-color, 900, 48px, 67px, 0.04em, uppercase);
 }
 
 .sub-header {
