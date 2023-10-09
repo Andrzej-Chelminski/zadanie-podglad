@@ -1,9 +1,9 @@
 ---
 ---
 
-@use "./variables" as *;
-@use "./mixins.scss" as *;
-@use "./sections" as *;
+@import "./variables";
+@import "./mixins.scss";
+@import "./sections";
 
 .section1__mobile--image {
     display: none;
