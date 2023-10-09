@@ -3,12 +3,12 @@
 
 @import "./mixins.scss";
 @import "./variables";
-@import "./nav.scss";
-@import "./sections.scss";
-@import "./footer";
 @import "./nav-mobile";
 @import "./sections-mobile";
 @import "./footer-mobile";
+@import "./nav.scss";
+@import "./sections.scss";
+@import "./footer";
 
 * {
     margin: 0;
